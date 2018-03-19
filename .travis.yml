@@ -18,6 +18,13 @@ before_install:
   - make
   - sudo make install
   - cd ..
+  - wget https://github.com/h2o/h2o/archive/v2.2.4.tar.gz
+  - tar -xvf v2.2.4.tar.gz
+  - cd h2o-2.2.4
+  - cmake -DWITH_MRUBY=off -DWITH_BUNDLED_SSL=off
+  - make libh2o
+  - sudo make install
+  - cd ..
 install:
   - pip3 install --user -I meson==0.44.1
 
