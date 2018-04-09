@@ -297,7 +297,7 @@ urbitscrypt_dep = dependency('libscrypt', version: '>=0.1.21', fallback: ['libsc
 ed25519_dep = dependency('ed25519', version: '>=0.1.0', fallback: ['ed25519', 'ed25519_dep'])
 murmur3_dep = dependency('murmur3', version: '>=0.1.0', fallback: ['murmur3', 'murmur3_dep'])
 softfloat3_dep = dependency('softfloat3', version: '>=3.0.0', fallback: ['softfloat3', 'softfloat3_dep'])
-libh2o_dep = dependency('libh2o', version: '>=0.13.3', fallback: ['libh2o', 'libh2o_dep'])
+libh2o_dep = dependency('libh2o', version: '=2.2.3', fallback: ['libh2o', 'libh2o_dep'])
 
 
 opt_flags = []
