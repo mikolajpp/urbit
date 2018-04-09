@@ -302,9 +302,9 @@ libh2o_dep = dependency('libh2o', version: '=2.2.3', fallback: ['libh2o', 'libh2
 
 opt_flags = []
 if get_option('debug')
-  opt_flags = ['-g']
+  opt_flags = ['-g','-funsigned-char', '-ffast-math']
 else
-  opt_flags = ['-O3']
+  opt_flags = ['-O3','-funsigned-char', '-ffast-math']
 endif
 
 executable('urbit',
