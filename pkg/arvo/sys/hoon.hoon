@@ -2046,7 +2046,7 @@
   $~  [%n ~]
   $@  @tas
   $%  [%ub @ub]  [%uc @uc]  [%ud @ud]  [%ui @ui]
-      [%ux @ux]  [%uv @uv]  [%uw @uw]
+      [%uo @uo]  [%ux @ux]  [%uv @uv]  [%uw @uw]
       [%sb @sb]  [%sc @sc]  [%sd @sd]  [%si @si]
       [%sx @sx]  [%sv @sv]  [%sw @sw]
       [%da @da]  [%dr @dr]
@@ -5287,6 +5287,10 @@
   ++  qex  (bass 16 ;~(plug sex (stun [0 3] hit)))
   ++  qib  (bass 2 (stun [4 4] sib))
   ++  qix  (bass 16 (stun [4 4] six))
+  ++  gam  (bass 8 ;~(plug sem (stun [0 3] sim)))
+  ++  gem  (bass 8 (stun [4 4] sem))
+  ++  sem  (cook |=(a=@ (sub a '0')) (shim '0' '7'))
+  ++  sim  (cook |=(a=@ (sub a '0')) (shim '1' '7'))
   ++  seb  (cold 1 (just '1'))
   ++  sed  (cook |=(a=@ (sub a '0')) (shim '1' '9'))
   ++  sev  ;~(pose sed sov)
@@ -5359,6 +5363,7 @@
            ==
   ++  fim  (sear den:fa (bass 58 (plus fem:ab)))
   ++  hex  (ape (bass 0x1.0000 ;~(plug qex:ab (star ;~(pfix dog qix:ab)))))
+  ++  tok  (ape (bass 0x1000 ;~(plug gam:ab (star ;~(pfix dog gem:ab)))))
   ++  lip  =+  tod=(ape ted:ab)
            (bass 256 ;~(plug tod (stun [3 3] ;~(pfix dog tod))))
   ++  mot  ;~  pose
@@ -5502,6 +5507,7 @@
           ?+  hay  [~ ((ox-co [10 3] |=(a=@ ~(d ne a))) q.p.lot)]
             %b  [['0' 'b' ~] ((ox-co [2 4] |=(a=@ ~(d ne a))) q.p.lot)]
             %i  [['0' 'i' ~] ((d-co 1) q.p.lot)]
+            %o  [['0' 'o' ~] ((ox-co [8 4] |=(a=@ ~(x ne a))) q.p.lot)]
             %x  [['0' 'x' ~] ((ox-co [16 4] |=(a=@ ~(x ne a))) q.p.lot)]
             %v  [['0' 'v' ~] ((ox-co [32 5] |=(a=@ ~(x ne a))) q.p.lot)]
             %w  [['0' 'w' ~] ((ox-co [64 5] |=(a=@ ~(w ne a))) q.p.lot)]
@@ -5663,6 +5669,7 @@
           (stag %ub ;~(pfix (just 'b') bay:ag))
           (stag %uc ;~(pfix (just 'c') fim:ag))
           (stag %ui ;~(pfix (just 'i') dim:ag))
+          (stag %uo ;~(pfix (just 'o') tok:ag))
           (stag %ux ;~(pfix (just 'x') hex:ag))
           (stag %uv ;~(pfix (just 'v') viz:ag))
           (stag %uw ;~(pfix (just 'w') wiz:ag))
