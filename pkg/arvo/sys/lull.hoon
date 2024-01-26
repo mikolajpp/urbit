@@ -1478,6 +1478,21 @@
     ?:  (lte size 8)  [8 %0b10]
     [16 %0b11]
   --  ::ames
+
+::
+::::
+  ::                    ++faux
+++  faux  ^?
+  |%
+  +$  gift  [%counter reg=@tas val=@ud]
+  +$  task  $~  [%vega ~]
+            $%  $>(%vega vane-task)
+                $>(%trim vane-task)
+                $>(%born vane-task)
+                [%inc reg=@tas]
+                [%dec reg=@tas]
+            ==
+  --
 ::                                                      ::::
 ::::                    ++behn                            ::  (1b) timekeeping
   ::                                                    ::::
@@ -3524,6 +3539,7 @@
       gift:clay
       gift:dill
       gift:eyre
+      gift:faux
       gift:gall
       gift:iris
       gift:jael
@@ -3536,6 +3552,7 @@
       task:behn
       task:dill
       task:eyre
+      task:faux
       task:gall
       task:iris
       task:jael
@@ -3549,6 +3566,7 @@
       [%c task:clay]
       [%d task:dill]
       [%e task:eyre]
+      [%f task:faux]
       [%g task:gall]
       [%i task:iris]
       [%j task:jael]
@@ -3572,6 +3590,7 @@
       [%clay gift:clay]
       [%dill gift:dill]
       [%eyre gift:eyre]
+      [%faux gift:faux]
       [%gall gift:gall]
       [%iris gift:iris]
       [%jael gift:jael]

@@ -1740,6 +1740,7 @@
     %c  %clay
     %d  %dill
     %e  %eyre
+    %f  %faux
     %g  %gall
     %i  %iris
     %j  %jael
