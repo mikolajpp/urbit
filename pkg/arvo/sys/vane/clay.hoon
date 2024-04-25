@@ -725,10 +725,23 @@
       ?:  =([%mime %hoon] [a b])
         %-  (trace 4 |.("%mime -> %hoon shortcircuit"))
         :_(nub [%vase =>(..zuse !>(|=(m=mime q.q.m)))])
+      ::  %mime: is mark present? If not, try +grab
+      ::
+      =+  fia=(fit-path %mar a)
+      ?:  &(?=(~ fia) =(%mime a))
+        =^  new=vase  nub  (build-fit %mar b)
+        =/  arm=?  (has-arm %grab a new)
+        =/  rab  (mule |.((slap new tsgl/[limb/a limb/%grab])))
+        ?.  &(arm ?=(%& -.rab) ?=(^ q.p.rab))  !!
+        %+  gain-leak  cast+a^b
+        |=  nob=state
+        %-  (trace 4 |.("%mime -> {<b>}: +grab:{(trip b)}"))
+        =.  nub  nob
+        :_(nub vase+p.rab)
       ::  try +grow; is there a +grow core with a .b arm?
       ::
       %-  (trace 1 |.("make cast {<a>} -> {<b>}"))
-      =^  old=vase  nub  (build-fit %mar a)
+      =^  old=vase  nub  (build-file (need fia))
       ?:  (has-arm %grow b old)
         ::  +grow core has .b arm; use that
         ::
@@ -1102,7 +1115,9 @@
     ++  build-fit
       |=  [pre=@tas pax=@tas]
       ^-  [vase state]
-      (build-file (fit-path pre pax))
+      %-  build-file
+      ~_  leaf/"clay: no files match /{(trip pre)}/{(trip pax)}/hoon"
+      (need (fit-path pre pax))
     ::
     ::  +fit-path: find path, maybe converting '-'s to '/'s
     ::
@@ -1111,14 +1126,13 @@
     ::
     ++  fit-path
       |=  [pre=@tas pax=@tas]
-      ^-  path
+      ^-  (unit path)
       =/  paz  (segments pax)
-      |-  ^-  path
-      ?~  paz
-        ~_(leaf/"clay: no files match /{(trip pre)}/{(trip pax)}/hoon" !!)
+      |-  ^-  (unit path)
+      ?~  paz  ~
       =/  pux=path  pre^(snoc i.paz %hoon)
       ?:  (~(has by files) pux)
-        pux
+        (some pux)
       $(paz t.paz)
     ::
     ++  all-fits
